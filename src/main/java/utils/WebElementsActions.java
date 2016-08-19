@@ -8,25 +8,27 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
+import java.util.Set;
 
 
 public class WebElementsActions {
 
     private WebDriverWrapper webDriverWrapper;
     private static WebDriverWait waitForElement;
+    private Random random;
 
     public static final Logger log = Logger.getLogger(ClassNameUtil.getCurrentClassName());
+    private static final String EXPLICIT_WAIT = PropertyLoader.loadProperty("selenium.explicit.timeout");
 
 
     public WebElementsActions(WebDriverWrapper driver) {
         this.webDriverWrapper = driver;
-        waitForElement = new WebDriverWait(driver, 20);
+        waitForElement = new WebDriverWait(driver, Long.parseLong(EXPLICIT_WAIT));
+        random = new Random();
     }
 
 
-    public void openPage(String siteURL){
-        webDriverWrapper.get(siteURL);
-    }
 
     public void clickElement(String elementLocator) {
         webDriverWrapper.findElement(UIMappingSingleton.ui(elementLocator)).click();
@@ -56,6 +58,7 @@ public class WebElementsActions {
         webDriverWrapper.findElement(UIMappingSingleton.ui(inputLocator)).sendKeys(inputData);
         log.info("Input in " + inputLocator + ", value - " + inputData);
     }
+
 
     public void clearField(String inputLocator) {
         webDriverWrapper.findElement(UIMappingSingleton.ui(inputLocator)).clear();
@@ -181,6 +184,15 @@ public class WebElementsActions {
     }
 
     /**
+     *Method#2 for refresh page
+     */
+    public void refreshPage2() {
+        Actions actions = new Actions(webDriverWrapper.getOriginalDriver());
+        actions.keyDown(Keys.CONTROL).sendKeys(Keys.F5).perform();
+    }
+
+
+    /**
      *Methods for pressing the keypad buttons
      */
     public void pressSpaceKey(String inputLocator) {
@@ -211,6 +223,53 @@ public class WebElementsActions {
 
     }
 
+    /**
+     * This method is used to select menu item
+     * Use Actions class
+     */
+    public void selectMenuItem(String menuLocator, String submenuLocator) {
+        new Actions(webDriverWrapper.getOriginalDriver()).moveToElement(getElement(menuLocator)).perform();
+        log.info("Focus on Menu to open list of submenus");
+
+        clickButton(submenuLocator);
+        log.info("Click on Submenu" + submenuLocator);
+    }
+
+    /**
+     * This method is used to do Focus to Element And Click
+     * Use Actions class
+     */
+    public void doFocusToElementAndClick(String focusElementLocator, String elementLocator) {
+        new Actions(webDriverWrapper.getOriginalDriver()).moveToElement(getElement(focusElementLocator)).perform();
+        log.info("Focus in to element" + focusElementLocator);
+
+        webDriverWrapper.switchTo();
+
+        if (isElementPresent(elementLocator)) {
+            clickButton(elementLocator);
+        }
+    }
+
+    /**
+     * This method is used to click on something and open window in New Tab
+     * Use Actions class
+     */
+    public void clickOnSomethingAndOpenNewTab(String elementLocator) {
+        Set<String> oldWindowsSet = webDriverWrapper.getWindowHandles();
+        clickButton(elementLocator);
+        Set<String> newWindowsSet = webDriverWrapper.getWindowHandles();
+        newWindowsSet.removeAll(oldWindowsSet);
+
+        String newWindowHandle = newWindowsSet.iterator().next();
+        webDriverWrapper.switchTo().window(newWindowHandle);
+    }
+
+    public void scrollPageToElement(String elementLocator) {
+        Actions actions = new Actions(webDriverWrapper.getOriginalDriver());
+        actions.moveToElement(getElement(elementLocator));
+        actions.perform();
+    }
+
 
     /**
      * This method is used to wait for getting response from all Ajax requests
@@ -235,6 +294,14 @@ public class WebElementsActions {
             log.info("WebElementsActions Driver: <" + webDriverWrapper + "> cann't execute JavaScript");
             return false;
         }
+    }
+
+    /**
+     * Wait the text in the element value specified time
+     */
+    public void waitTextPresent(WebElement elementLocator, String text) {
+        log.info("*Start TO* Wait For Element " + elementLocator + " Present");
+        waitForElement.until(ExpectedConditions.textToBePresentInElement(elementLocator, text));
     }
 
     /**
@@ -298,15 +365,44 @@ public class WebElementsActions {
         log.info("WaitForElement _" + elementLocator + "_ Present");
     }
 
-    /**
+   /* *//**
      * Scroll a window
      *
      * @see {@link JavascriptExecutor} and {@link JavascriptExecutor#executeScript(String, Object...)}
-     */
+     *//*
     public void windowScroll() {
         JavascriptExecutor javascriptExecutor = (JavascriptExecutor) webDriverWrapper;
         // Vertical scroll - down by 100  pixels
         javascriptExecutor.executeScript("window.scrollBy(0,100)", "");
+    }*/
+
+    /**
+     * Select/deselect the checkbox, the second parameter should be "Y" or "N"
+     */
+    public void selectCheckbox(String checkboxLocator, String isSet) {
+        if (webDriverWrapper.findElement(UIMappingSingleton.ui(checkboxLocator)).isSelected() & isSet.equals("N")) {
+            webDriverWrapper.findElement(UIMappingSingleton.ui(checkboxLocator)).click();
+        }
+        if (!webDriverWrapper.findElement(UIMappingSingleton.ui(checkboxLocator)).isSelected() & isSet.equals("Y")) {
+            webDriverWrapper.findElement(UIMappingSingleton.ui(checkboxLocator)).click();
+        }
+    }
+
+    /**
+     *Methods for generation random number
+     */
+    public int getRandom() {
+        return (int) (Math.random() * 100000000);
+    }
+
+
+    /**
+     *Method for generation random email
+     */
+    public String generateRandomEmail(String inputEmail) {
+        String newEmail = "Test_" + getRandom() + inputEmail;
+
+        return newEmail;
     }
 
 
