@@ -2,7 +2,6 @@ package tests;
 
 import org.apache.log4j.Logger;
 import org.testng.annotations.*;
-import pages.Ellos;
 import pages.GoPro;
 import utils.*;
 
