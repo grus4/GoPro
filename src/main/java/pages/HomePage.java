@@ -59,7 +59,7 @@ public class HomePage extends Page {
                 web.isElementAvailable("")) {
             log.info("");
         } else {
-            log.error("");
+            log.error("v");
 
         }
     }
