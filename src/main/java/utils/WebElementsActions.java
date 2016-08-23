@@ -348,6 +348,13 @@ public class WebElementsActions {
     }
 
     /**
+     * Select value from drop down list by visible text
+     */
+    public void selectFromListByVisibleText(String listLocator, String listValue) {
+        new Select(webDriverWrapper.findElement(UIMappingSingleton.ui(listLocator))).selectByVisibleText(listValue);
+    }
+
+    /**
      * Wait the element on page specified time
      */
     public void waitElementNotVisible(String elementLocator, int timeoutInS) {
@@ -363,6 +370,15 @@ public class WebElementsActions {
     public void waitForElementPresent(String elementLocator) {
         waitForElement.until(ExpectedConditions.visibilityOfElementLocated(UIMappingSingleton.ui(elementLocator)));
         log.info("WaitForElement _" + elementLocator + "_ Present");
+    }
+
+
+    /**
+     * An expectation for checking that an element is present on the DOM of a page and clickable.
+     */
+    public void waitForElementToBeClickable(String elementLocator) {
+        waitForElement.until(ExpectedConditions.elementToBeClickable(UIMappingSingleton.ui(elementLocator)));
+        log.info("WaitForElement _" + elementLocator + "_to be clickable");
     }
 
    /* *//**
