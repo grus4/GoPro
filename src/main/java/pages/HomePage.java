@@ -27,7 +27,7 @@ public class HomePage extends Page {
     }
 
     public void selectCountryFromCountryConfirmDropDown(String country){
-        web.selectFromList("CountryDropDownOnCountryConfirmDialogue", country);
+        web.selectFromListByVisibleText("CountryDropDownOnCountryConfirmDialogue", country);
         log.info(country + " was selected from country list");
     }
 

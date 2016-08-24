@@ -348,6 +348,13 @@ public class WebElementsActions {
     }
 
     /**
+     * Select option from drop down list by visible text
+     */
+    public void selectFromListByVisibleText(String listLocator, String visibleText) {
+        new Select(webDriverWrapper.findElement(UIMappingSingleton.ui(listLocator))).selectByVisibleText(visibleText);
+    }
+
+    /**
      * Wait the element on page specified time
      */
     public void waitElementNotVisible(String elementLocator, int timeoutInS) {
