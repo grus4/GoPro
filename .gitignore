@@ -1,6 +1,6 @@
 #IDEA files
 target/
-.idea
+#.idea
 *.iml
 #Java files
 *.class
