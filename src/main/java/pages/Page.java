@@ -3,6 +3,7 @@ package pages;
 import org.apache.log4j.Logger;
 import org.testng.Assert;
 import utils.ClassNameUtil;
+import utils.JsExecutorWrapper;
 import utils.WebDriverWrapper;
 import utils.WebElementsActions;
 
@@ -16,17 +17,20 @@ public abstract class Page {
     private String PAGE;
     public WebDriverWrapper webDriverWrapper;
     public WebElementsActions web;
+    public JsExecutorWrapper js;
 
 
     public Page(WebDriverWrapper dr, String page) {
         webDriverWrapper = dr;
         PAGE = page;
         web = new WebElementsActions(dr);
+        js = new JsExecutorWrapper(dr);
     }
 
     public Page(WebDriverWrapper dr) {
         webDriverWrapper = dr;
         web = new WebElementsActions(dr);
+        js = new JsExecutorWrapper(dr);
     }
 
 
@@ -44,6 +48,21 @@ public abstract class Page {
         }
         log.info("Page open successful.");
         return true;
+    }
+
+    public void openPage(String pageURL) {
+        get(pageURL);
+
+        log.info("Start open page.");
+        log.info("I'm on the " + getCurrentPageURL());
+
+        if (pageURL.equals(getCurrentPageURL())) {
+            log.info("Page open successful.");
+        } else {
+            log.error("Error in open page!\n");
+            Assert.fail("pageURL - " + pageURL + "\n" +
+                    "CurrentUrl - " + getCurrentPageURL());
+        }
     }
 
     /*
@@ -74,6 +93,19 @@ public abstract class Page {
 
     public void deleteAllCookies() {
         webDriverWrapper.manage().deleteAllCookies();
+    }
+
+    public void get(String URL) {
+        webDriverWrapper.get(URL);
+    }
+
+    public void sleep(long millis) {
+        try {
+            log.info("*Start TO* Wait " + millis + " milliseconds");
+            Thread.sleep(millis);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
 

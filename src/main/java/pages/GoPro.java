@@ -10,6 +10,8 @@ public class GoPro {
     public WebElementsActions web;
     public HomePage homePage;
     public ProductDetailsPage productDetailsPage;
+    public ShoppingCartPage shoppingCartPage;
+    public CheckoutLoginPage checkoutLoginPage;
 
     public GoPro(WebDriverWrapper driverWrapper) {
         web = new WebElementsActions(driverWrapper);

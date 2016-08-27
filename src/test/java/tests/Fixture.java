@@ -32,7 +32,7 @@ public class Fixture {
         log.info("Start Test Suite execution");
     }
 
-    @AfterSuite
+    //@AfterSuite
     public static void tearDown() {
         webDriverWrapper.quit();
         log.info("Tests Suite execution completed.");

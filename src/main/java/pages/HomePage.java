@@ -17,6 +17,10 @@ public class HomePage extends Page {
         super(dr);
     }
 
+    public HomePage(WebDriverWrapper dr, String page) {
+        super(dr, page);
+    }
+
     public void clickShopNowButton(){
         web.clickButton("ShopNowButton");
         log.info("Shop now button was clicked");
@@ -64,7 +68,9 @@ public class HomePage extends Page {
 
     public void switchToHeroSessionPage(){
         web.scrollPageToElement("HeroSessionCamera");
+        web.waitForElementPresent("HeroSessionBackgroundImage");
         web.clickElement("HeroSessionCamera");
+        sleep(5000);
 
         web.waitForElementPresent("HeroSessionMainImage");
         if(web.isElementPresent("HeroSessionMainImage")&&
