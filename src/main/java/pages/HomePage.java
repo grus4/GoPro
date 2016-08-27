@@ -3,6 +3,7 @@ package pages;
 import org.apache.log4j.Logger;
 import org.testng.Assert;
 import utils.ClassNameUtil;
+import utils.PropertyLoader;
 import utils.WebDriverWrapper;
 
 /**
@@ -48,19 +49,32 @@ public class HomePage extends Page {
         }
     }
 
+    public void openHero4BlackProudct(){
+        webDriverWrapper.get(PropertyLoader.loadProperty("Hero4BlackProductPage"));
+    }
+
+    public void openHero4SilverProduct(){
+        webDriverWrapper.get(PropertyLoader.loadProperty("Hero4SilverProductPage"));
+    }
+
+    public void openHeroSessionProduct(){
+        webDriverWrapper.get(PropertyLoader.loadProperty("HeroSessionProductPage"));
+    }
 
 
-    public void switchToHeroSessionPDP(){
+    public void switchToHeroSessionPage(){
         web.scrollPageToElement("HeroSessionCamera");
-        web.clickElement("");
+        web.clickElement("HeroSessionCamera");
 
-        web.waitForElementPresent("");
-        if(web.isElementPresent("")&&
-                web.isElementAvailable("")) {
-            log.info("");
+        web.waitForElementPresent("HeroSessionMainImage");
+        if(web.isElementPresent("HeroSessionMainImage")&&
+                web.isElementAvailable("HeroSessionMainImage")) {
+            log.info("Switching to Hero Sessin page was correct");
         } else {
-            log.error("v");
-
+            log.error("Switching to Hero Session page was INCORRECT!\n");
+            Assert.fail("Switching to Hero Session page was INCORRECT!");
         }
     }
+
+
 }
