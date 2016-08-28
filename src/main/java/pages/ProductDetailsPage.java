@@ -19,11 +19,7 @@ public class ProductDetailsPage extends Page {
     public void addProductToCart(){
         web.waitForElementPresent("AddToCartButton");
         web.waitForElementToBeClickable("AddToCartButton");
-        sleep(5000);
         web.clickButton("AddToCartButton");
-        sleep(5000);
-        web.refreshPage2();
-        web.clickElement("CartIcon");
         web.waitForElementPresent("CheckoutButtonInMiniCart");
 
         if(web.isElementPresent("CheckoutButtonInMiniCart")
@@ -45,9 +41,8 @@ public class ProductDetailsPage extends Page {
             web.clickButton("CheckoutButtonInMiniCart");
         } else {
             web.clickElement("CartIcon");
-            sleep(3000);
-            web.clickOnSomethingAndOpenNewTab("CheckoutButtonInMiniCart");
-            sleep(5000);
+            web.clickButton("CheckoutButtonInMiniCart");
+
         }
 
         web.waitForElementPresent("CheckoutButtonInShoppingCart");

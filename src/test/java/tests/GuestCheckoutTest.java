@@ -33,11 +33,11 @@ public class GuestCheckoutTest extends Fixture {
         goPro.onePageCheckout.fillZipField(ZIP);
         goPro.onePageCheckout.fillPhoneField(PHONE);
         goPro.onePageCheckout.switchToPaymentSection();
-        goPro.onePageCheckout.fillCardName("");
-        goPro.onePageCheckout.fillCardNumber("");
-        goPro.onePageCheckout.selectMonth("");
-        goPro.onePageCheckout.selectYear("");
-        goPro.onePageCheckout.fillSecurityCode("");
+        goPro.onePageCheckout.fillCardName(CARDNAME_VISA);
+        goPro.onePageCheckout.fillCardNumber(CARDNUMBER_VISA);
+        goPro.onePageCheckout.selectMonth(MONTH);
+        goPro.onePageCheckout.selectYear(YEAR);
+        goPro.onePageCheckout.fillSecurityCode(VISA_CVV);
         goPro.onePageCheckout.switchToReviewPage();
 
 

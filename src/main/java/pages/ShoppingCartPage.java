@@ -19,11 +19,9 @@ public class ShoppingCartPage extends Page{
     public void switchToCheckoutLoginPage() {
         web.clickButton("CheckoutButtonInShoppingCart");
         web.waitForElementPresent("EmailField");
-        web.waitForElementToBeClickable("CheckoutButtonOnLoginPage");
+        web.waitForElementToBeClickable("EmailField");
 
-        if(web.isElementPresent("EmailField")
-                && web.isElementAvailable("CheckoutButtonOnLoginPage")) {
-
+        if(web.isElementPresent("EmailField")) {
             log.info("Switching to Guest checkout Login page was correct");
         } else {
             log.error("Switching to Guest checkout Login page was INCORRECT\n");

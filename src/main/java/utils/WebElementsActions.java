@@ -271,10 +271,7 @@ public class WebElementsActions {
     }
 
 
-    /**
-     * This method is used to wait for getting response from all Ajax requests
-     */
-    public boolean waitForAjaxResponse(int timeoutSeconds) {
+    public boolean waitForAjaxResponse(int timeoutSeconds) throws InterruptedException {
         //TODO js executor
         if (webDriverWrapper instanceof JavascriptExecutor) {
             JavascriptExecutor jsDriver = (JavascriptExecutor) webDriverWrapper;
@@ -295,7 +292,6 @@ public class WebElementsActions {
             return false;
         }
     }
-
     /**
      * Wait the text in the element value specified time
      */

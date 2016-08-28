@@ -25,6 +25,11 @@ public class Fixture {
     protected static final String STATE = PropertyLoader.loadProperty("state");
     protected static final String ZIP = PropertyLoader.loadProperty("zip");
     protected static final String PHONE = PropertyLoader.loadProperty("phone");
+    protected static final String CARDNAME_VISA = PropertyLoader.loadProperty("card.name1");
+    protected static final String CARDNUMBER_VISA = PropertyLoader.loadProperty("card.number1");
+    protected static final String MONTH = PropertyLoader.loadProperty("month");
+    protected static final String YEAR = PropertyLoader.loadProperty("year");
+    protected static final String VISA_CVV = PropertyLoader.loadProperty("cvv1");
 
 
 
