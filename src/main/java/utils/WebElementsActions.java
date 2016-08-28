@@ -274,7 +274,7 @@ public class WebElementsActions {
     /**
      * This method is used to wait for getting response from all Ajax requests
      */
-    public boolean waitForAjaxResponse(int timeoutSeconds) throws InterruptedException {
+    public boolean waitForAjaxResponse(int timeoutSeconds) {
         //TODO js executor
         if (webDriverWrapper instanceof JavascriptExecutor) {
             JavascriptExecutor jsDriver = (JavascriptExecutor) webDriverWrapper;

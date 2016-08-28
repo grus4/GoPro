@@ -12,10 +12,14 @@ public class GoPro {
     public ProductDetailsPage productDetailsPage;
     public ShoppingCartPage shoppingCartPage;
     public CheckoutLoginPage checkoutLoginPage;
+    public OnePageCheckout onePageCheckout;
 
     public GoPro(WebDriverWrapper driverWrapper) {
         web = new WebElementsActions(driverWrapper);
         homePage = new HomePage(driverWrapper);
         productDetailsPage = new ProductDetailsPage(driverWrapper);
+        shoppingCartPage = new ShoppingCartPage(driverWrapper);
+        checkoutLoginPage = new CheckoutLoginPage(driverWrapper);
+        onePageCheckout = new OnePageCheckout(driverWrapper);
     }
 }

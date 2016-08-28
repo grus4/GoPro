@@ -1,5 +1,6 @@
 package pages;
 
+import org.testng.Assert;
 import utils.WebDriverWrapper;
 
 /**
@@ -25,5 +26,18 @@ public class CheckoutLoginPage extends Page {
         web.waitForElementToBeClickable("CheckoutButtonOnLoginPage");
         web.clickButton("CheckoutButtonOnLoginPage");
 
+    }
+
+    public void switchToCheckoutPage() {
+        web.waitForElementPresent("CheckoutButtonOnLoginPage");
+        web.waitForElementToBeClickable("CheckoutButtonOnLoginPage");
+        web.clickButton("CheckoutButtonOnLoginPage");
+
+        if(web.isElementPresent("NextStepButtonInShipping")) {
+            log.info("Switching to Checkout page was correct");
+        } else {
+            log.error("Switching to Checkout page was INCORRECT!\n");
+            Assert.fail("Switching to Checkout page was INCORRECT!");
+        }
     }
 }

@@ -14,8 +14,17 @@ public class Fixture {
     static GoPro goPro;
     private static final Logger log = Logger.getLogger(ClassNameUtil.getCurrentClassName());
 
-    static final String SITE_URL = PropertyLoader.loadProperty("site.url");
     private static final String IMPLICIT_WAIT = PropertyLoader.loadProperty("wait.timeout");
+    protected static final String EMAIL = PropertyLoader.loadProperty("user.email");
+    protected static final String COUNTRY = PropertyLoader.loadProperty("country");
+    protected static final String SITE_URL = PropertyLoader.loadProperty("site.url");
+    protected static final String FIRSTNAME = PropertyLoader.loadProperty("first.name");
+    protected static final String LASTNAME = PropertyLoader.loadProperty("last.name");
+    protected static final String ADDRESS_1 = PropertyLoader.loadProperty("address_1");
+    protected static final String CITY = PropertyLoader.loadProperty("city");
+    protected static final String STATE = PropertyLoader.loadProperty("state");
+    protected static final String ZIP = PropertyLoader.loadProperty("zip");
+    protected static final String PHONE = PropertyLoader.loadProperty("phone");
 
 
 
