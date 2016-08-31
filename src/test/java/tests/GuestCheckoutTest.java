@@ -39,6 +39,7 @@ public class GuestCheckoutTest extends Fixture {
         goPro.onePageCheckout.selectYear(YEAR);
         goPro.onePageCheckout.fillSecurityCode(VISA_CVV);
         goPro.onePageCheckout.switchToReviewPage();
+        goPro.reviewPage.switchToConfirmationPage();
 
 
 

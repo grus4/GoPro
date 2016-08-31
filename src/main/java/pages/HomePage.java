@@ -24,6 +24,8 @@ public class HomePage extends Page {
     public void clickShopNowButton(){
         web.clickButton("ShopNowButton");
         log.info("Shop now button was clicked");
+        sleep(5000);
+
     }
 
     public void clickSelectDifferentLocationLink(){
@@ -68,11 +70,12 @@ public class HomePage extends Page {
 
     public void switchToHeroSessionPage(){
         web.scrollPageToElement("HeroSessionCamera");
-        web.waitForElementPresent("HeroSessionBackgroundImage");
+        web.waitForElementPresent("HeroSessionCamera");
+        web.waitForElementToBeClickable("HeroSessionCamera");
         web.clickElement("HeroSessionCamera");
-        sleep(5000);
 
         web.waitForElementPresent("HeroSessionMainImage");
+        web.waitForElementToBeClickable("HeroSessionMainImage");
         if(web.isElementPresent("HeroSessionMainImage")&&
                 web.isElementAvailable("HeroSessionMainImage")) {
             log.info("Switching to Hero Sessin page was correct");

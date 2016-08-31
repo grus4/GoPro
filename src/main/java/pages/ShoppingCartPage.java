@@ -18,6 +18,15 @@ public class ShoppingCartPage extends Page{
 
     public void switchToCheckoutLoginPage() {
         web.clickButton("CheckoutButtonInShoppingCart");
+        web.waitForElementToBeClickable("NoThanksButton");
+
+        if(web.isElementPresent("NoThanksButton")){
+            web.clickButton("NoThanksButton");
+            log.info("Close the offered SD card");
+        } else {
+            log.info("Switching to checkout page");
+        }
+
         web.waitForElementPresent("EmailField");
         web.waitForElementToBeClickable("EmailField");
 

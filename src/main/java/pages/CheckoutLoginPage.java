@@ -33,6 +33,7 @@ public class CheckoutLoginPage extends Page {
         web.waitForElementToBeClickable("CheckoutButtonOnLoginPage");
         web.clickButton("CheckoutButtonOnLoginPage");
 
+
         if(web.isElementPresent("NextStepButtonInShipping")) {
             log.info("Switching to Checkout page was correct");
         } else {
