@@ -83,23 +83,23 @@ public class OnePageCheckout extends Page{
         web.waitForElementPresent("CardNameField");
         web.waitForElementToBeClickable("CardNameField");
         web.input("CardNameField", cardName);
-        //log.info("Card Name field was filled out - " + cardName);
+
 
     }
 
     public void fillCardNumber(String cardNumber) {
         web.input("CardNumberField", cardNumber);
-        //log.info("Card Number field was filled out - " + cardNumber);
+
     }
 
     public void selectMonth(String month) {
         web.selectFromListByVisibleText("MonthDropDown", month);
-        //log.info(month + " was selected from drop down menu");
+
     }
 
     public void selectYear(String year) {
         web.selectFromListByVisibleText("YearDropDown", year);
-        //log.info(year + " was selected from drop down menu");
+
     }
 
     public void fillSecurityCode(String visaCvv) {
@@ -107,6 +107,8 @@ public class OnePageCheckout extends Page{
     }
 
     public void switchToReviewPage() {
+        web.waitForElementPresent("ReviewAndCompleteButton");
+        web.waitForElementToBeClickable("ReviewAndCompleteButton");
         web.clickButton("ReviewAndCompleteButton");
         web.waitForElementPresent("CompletePurchaseButton");
         web.waitForElementToBeClickable("CompletePurchaseButton");
@@ -118,5 +120,11 @@ public class OnePageCheckout extends Page{
             log.error("Switching to Review page was INCORRECT!\n");
             Assert.fail("Switching to Review page was INCORRECT!");
         }
+    }
+
+    public void selectOvernightShipping(){
+        sleep(5000);
+        //web.waitForElementToBeClickable("OvernightShippingRadioButton");
+        web.clickElement("OvernightShippingRadioButton");
     }
 }

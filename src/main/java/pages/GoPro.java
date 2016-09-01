@@ -14,6 +14,7 @@ public class GoPro {
     public CheckoutLoginPage checkoutLoginPage;
     public OnePageCheckout onePageCheckout;
     public ReviewPage reviewPage;
+    public ConfirmationPage confirmationPage;
 
     public GoPro(WebDriverWrapper driverWrapper) {
         web = new WebElementsActions(driverWrapper);
@@ -23,5 +24,6 @@ public class GoPro {
         checkoutLoginPage = new CheckoutLoginPage(driverWrapper);
         onePageCheckout = new OnePageCheckout(driverWrapper);
         reviewPage = new ReviewPage(driverWrapper);
+        confirmationPage = new ConfirmationPage(driverWrapper);
     }
 }
