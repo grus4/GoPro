@@ -25,4 +25,10 @@ public class ConfirmationPage extends Page {
             return false;
         }
     }
+
+
+    public void switchToHomePage(){
+        web.clickLink("ShopCategory");
+
+    }
 }

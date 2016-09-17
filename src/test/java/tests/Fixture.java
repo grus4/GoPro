@@ -33,6 +33,9 @@ public class Fixture {
     protected static final String YEAR = PropertyLoader.loadProperty("year");
     protected static final String VISA_CVV = PropertyLoader.loadProperty("cvv1");
     protected static final String MASTERCARD_CVV = PropertyLoader.loadProperty("cvv2");
+    protected static final String CARDNAME_AMEX = PropertyLoader.loadProperty("card.name3");
+    protected static final String CARDNUMBER_AMEX = PropertyLoader.loadProperty("card.number3");
+    protected static final String AMEX_CVV = PropertyLoader.loadProperty("cvv3");
 
 
 
@@ -49,7 +52,7 @@ public class Fixture {
         log.info("Start Test Suite execution");
     }
 
-    //@AfterSuite
+    @AfterSuite
     public static void tearDown() {
         webDriverWrapper.quit();
         log.info("Tests Suite execution completed.");

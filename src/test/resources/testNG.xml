@@ -2,9 +2,7 @@
 <suite name="FirstTestSuite" verbose="1">
     <test name="SmokeTest">
         <classes>
-            <class name="tests.LoginTest"/>
-            <class name="tests.RegistrationTest"/>
-            <class name="tests.ProductPageTest"/>
+            <class name="tests.GuestCheckoutTest_US"/>
         </classes>
     </test>
 </suite>

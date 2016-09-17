@@ -7,19 +7,16 @@ import utils.PropertyLoader;
 /**
  * Created by user on 8/27/2016.
  */
-public class GuestCheckoutTest extends Fixture {
+public class GuestCheckoutTest_US extends Fixture {
 
 
-
-
-
-    //@Test ()
+    @Test ()
     public static void guestCheckoutWithValidData_FreeShipping_VISA(){
         goPro.homePage.openPage(SITE_URL);
         goPro.homePage.clickSelectDifferentLocationLink();
         goPro.homePage.selectCountryFromCountryConfirmDropDown(COUNTRY);
         goPro.homePage.clickShopNowButton();
-        goPro.homePage.switchToHeroSessionPage();
+        goPro.homePage.openHeroSessionProduct();
         goPro.productDetailsPage.addProductToCart();
         goPro.productDetailsPage.switchToShoppingCart();
         goPro.shoppingCartPage.switchToCheckoutLoginPage();
@@ -42,6 +39,7 @@ public class GuestCheckoutTest extends Fixture {
         goPro.onePageCheckout.switchToReviewPage();
         goPro.reviewPage.switchToConfirmationPage();
         Assert.assertTrue(goPro.confirmationPage.isThankYouMessageAvailable(), "Thank you message is not displayed");
+        goPro.homePage.deleteAllCookies();
 
     }
 
@@ -51,7 +49,7 @@ public class GuestCheckoutTest extends Fixture {
         goPro.homePage.clickSelectDifferentLocationLink();
         goPro.homePage.selectCountryFromCountryConfirmDropDown(COUNTRY);
         goPro.homePage.clickShopNowButton();
-        goPro.homePage.switchToHeroSessionPage();
+        goPro.homePage.openHeroSessionProduct();
         goPro.productDetailsPage.addProductToCart();
         goPro.productDetailsPage.switchToShoppingCart();
         goPro.shoppingCartPage.switchToCheckoutLoginPage();
@@ -75,6 +73,40 @@ public class GuestCheckoutTest extends Fixture {
         goPro.onePageCheckout.switchToReviewPage();
         goPro.reviewPage.switchToConfirmationPage();
         Assert.assertTrue(goPro.confirmationPage.isThankYouMessageAvailable(), "Thank you message is not displayed");
+        goPro.homePage.deleteAllCookies();
+
+    }
+
+    @Test
+    public static void GuestCheckoutWithValidData_FreeShipping_AMEX(){
+        goPro.homePage.openPage(SITE_URL);
+        goPro.homePage.clickSelectDifferentLocationLink();
+        goPro.homePage.selectCountryFromCountryConfirmDropDown(COUNTRY);
+        goPro.homePage.clickShopNowButton();
+        goPro.homePage.openHeroSessionProduct();
+        goPro.productDetailsPage.addProductToCart();
+        goPro.productDetailsPage.switchToShoppingCart();
+        goPro.shoppingCartPage.switchToCheckoutLoginPage();
+        goPro.checkoutLoginPage.fillEmailField(EMAIL);
+        goPro.checkoutLoginPage.switchToCheckoutPage();
+        goPro.onePageCheckout.fillFirstNameField(FIRSTNAME);
+        goPro.onePageCheckout.fillLastNameField(LASTNAME);
+        goPro.onePageCheckout.fillAddressLine_1_Field(ADDRESS_1);
+        goPro.onePageCheckout.fillAddressLine_2_Field("");
+        goPro.onePageCheckout.fillCityField(CITY);
+        goPro.onePageCheckout.selectState(STATE);
+        goPro.onePageCheckout.fillZipField(ZIP);
+        goPro.onePageCheckout.fillPhoneField(PHONE);
+        goPro.onePageCheckout.switchToPaymentSection();
+        goPro.onePageCheckout.fillCardName(CARDNAME_AMEX);
+        goPro.onePageCheckout.fillCardNumber(CARDNUMBER_AMEX);
+        goPro.onePageCheckout.selectMonth(MONTH);
+        goPro.onePageCheckout.selectYear(YEAR);
+        goPro.onePageCheckout.fillSecurityCode(AMEX_CVV);
+        goPro.onePageCheckout.switchToReviewPage();
+        goPro.reviewPage.switchToConfirmationPage();
+        Assert.assertTrue(goPro.confirmationPage.isThankYouMessageAvailable(), "Thank you message is not displayed");
+        goPro.confirmationPage.deleteAllCookies();
 
     }
 }

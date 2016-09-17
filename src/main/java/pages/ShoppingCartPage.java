@@ -21,6 +21,7 @@ public class ShoppingCartPage extends Page{
         web.waitForElementToBeClickable("NoThanksButton");
 
         if(web.isElementPresent("NoThanksButton")){
+            //web.waitForElementToBeClickable("NoThanksButton");
             web.clickButton("NoThanksButton");
             log.info("Close the offered SD card");
         } else {

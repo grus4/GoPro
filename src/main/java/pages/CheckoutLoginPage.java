@@ -41,4 +41,5 @@ public class CheckoutLoginPage extends Page {
             Assert.fail("Switching to Checkout page was INCORRECT!");
         }
     }
+
 }

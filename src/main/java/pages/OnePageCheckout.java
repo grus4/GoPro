@@ -63,7 +63,7 @@ public class OnePageCheckout extends Page{
     public void switchToPaymentSection() {
         //web.waitForElementPresent("NextStepButtonInShipping");
         //web.waitForElementToBeClickable("NextStepButtonInShipping");
-        sleep(5000);
+        sleep(10000);
         web.clickButton("NextStepButtonInShipping");
         sleep(10000);
         web.waitForElementPresent("CardNameField");
