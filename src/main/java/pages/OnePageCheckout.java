@@ -56,7 +56,7 @@ public class OnePageCheckout extends Page{
         web.input("PhoneNumberField", phone);
     }
 
-    public void clickTheNextStepButton() {
+    public void clickTheNextStepButtonInShipping() {
         web.clickButton("NextStepButtonInShipping");
     }
 
@@ -126,5 +126,26 @@ public class OnePageCheckout extends Page{
         sleep(5000);
         //web.waitForElementToBeClickable("OvernightShippingRadioButton");
         web.clickElement("OvernightShippingRadioButton");
+    }
+
+    public void selectPayPal() {
+        web.clickElement("PayPalRadioButton");
+        web.waitElementNotVisible("SecurityCodeField", 3);
+    }
+
+
+    public void switchToPayPalLoginPage() {
+        web.waitForElementPresent("PayPalImage");
+        web.clickButton("ReviewAndCompleteButton");
+        web.waitForElementPresent("EmailField_PayPalForm");
+        web.waitForElementToBeClickable("EmailField_PayPalForm");
+
+        if(web.isElementPresent("EmailField_PayPalForm")&&
+                web.isElementAvailable("EmailField_PayPalForm")){
+            log.info("Switching to PayPal Login Page was correct");
+        } else {
+            log.error("Switching to PayPal Login Page was INCORRECT!\n");
+            Assert.fail("Switching to PayPal Login Page was INCORRECT!");
+        }
     }
 }

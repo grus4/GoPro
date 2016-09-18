@@ -1,5 +1,6 @@
 package pages;
 
+import utils.ScreenShotMaker;
 import utils.WebDriverWrapper;
 import utils.WebElementsActions;
 
@@ -15,6 +16,9 @@ public class GoPro {
     public OnePageCheckout onePageCheckout;
     public ReviewPage reviewPage;
     public ConfirmationPage confirmationPage;
+    public ScreenShotMaker screenShotMaker;
+    public PayPalLoginPage payPalLoginPage;
+    public PayPalAccountPage payPalAccountPage;
 
     public GoPro(WebDriverWrapper driverWrapper) {
         web = new WebElementsActions(driverWrapper);
@@ -25,5 +29,6 @@ public class GoPro {
         onePageCheckout = new OnePageCheckout(driverWrapper);
         reviewPage = new ReviewPage(driverWrapper);
         confirmationPage = new ConfirmationPage(driverWrapper);
+        screenShotMaker = new ScreenShotMaker(driverWrapper);
     }
 }
