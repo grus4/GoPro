@@ -9,13 +9,13 @@ import org.testng.annotations.Test;
 public class GuestCheckoutTest_US extends Fixture {
 
 
-    //@Test ()
+    @Test ()
     public static void guestCheckoutWithValidData_FreeShipping_VISA(){
         goPro.homePage.openPage(SITE_URL);
         goPro.homePage.clickSelectDifferentLocationLink();
         goPro.homePage.selectCountryFromCountryConfirmDropDown(COUNTRY);
         goPro.homePage.clickShopNowButton();
-        goPro.homePage.openHeroSessionProduct();
+        goPro.homePage.switchToHeroSessionPage();
         goPro.productDetailsPage.addProductToCart();
         goPro.productDetailsPage.switchToShoppingCart();
         goPro.shoppingCartPage.switchToCheckoutLoginPage();
@@ -42,13 +42,13 @@ public class GuestCheckoutTest_US extends Fixture {
 
     }
 
-    //@Test
+    @Test
     public static void guestCheckoutWithValidData_OvernightShipping_MasterCard(){
         goPro.homePage.openPage(SITE_URL);
         goPro.homePage.clickSelectDifferentLocationLink();
         goPro.homePage.selectCountryFromCountryConfirmDropDown(COUNTRY);
         goPro.homePage.clickShopNowButton();
-        goPro.homePage.openHeroSessionProduct();
+        goPro.homePage.switchToHeroSessionPage();
         goPro.productDetailsPage.addProductToCart();
         goPro.productDetailsPage.switchToShoppingCart();
         goPro.shoppingCartPage.switchToCheckoutLoginPage();
@@ -82,7 +82,7 @@ public class GuestCheckoutTest_US extends Fixture {
         goPro.homePage.clickSelectDifferentLocationLink();
         goPro.homePage.selectCountryFromCountryConfirmDropDown(COUNTRY);
         goPro.homePage.clickShopNowButton();
-        goPro.homePage.openHeroSessionProduct();
+        goPro.homePage.switchToHeroSessionPage();
         goPro.productDetailsPage.addProductToCart();
         goPro.productDetailsPage.switchToShoppingCart();
         goPro.shoppingCartPage.switchToCheckoutLoginPage();
@@ -109,13 +109,13 @@ public class GuestCheckoutTest_US extends Fixture {
 
     }
 
-    //@Test
+    @Test
     public static void GuestCheckoutWithValidData_OvernightShipping_Discover(){
         goPro.homePage.openPage(SITE_URL);
         goPro.homePage.clickSelectDifferentLocationLink();
         goPro.homePage.selectCountryFromCountryConfirmDropDown(COUNTRY);
         goPro.homePage.clickShopNowButton();
-        goPro.homePage.openHeroSessionProduct();
+        goPro.homePage.switchToHeroSessionPage();
         goPro.productDetailsPage.addProductToCart();
         goPro.productDetailsPage.switchToShoppingCart();
         goPro.shoppingCartPage.switchToCheckoutLoginPage();
@@ -124,12 +124,12 @@ public class GuestCheckoutTest_US extends Fixture {
         goPro.onePageCheckout.fillFirstNameField(FIRSTNAME);
         goPro.onePageCheckout.fillLastNameField(LASTNAME);
         goPro.onePageCheckout.fillAddressLine_1_Field(ADDRESS_1);
+        goPro.onePageCheckout.fillAddressLine_2_Field("");
         goPro.onePageCheckout.fillCityField(CITY);
         goPro.onePageCheckout.selectState(STATE);
         goPro.onePageCheckout.fillZipField(ZIP);
         goPro.onePageCheckout.fillPhoneField(PHONE);
         goPro.onePageCheckout.selectOvernightShipping();
-        goPro.onePageCheckout.clickTheNextStepButtonInShipping();
         goPro.onePageCheckout.switchToPaymentSection();
         goPro.onePageCheckout.fillCardName(CARDNAME_DISCOVER);
         goPro.onePageCheckout.fillCardNumber(CARDNUMBER_DISCOVER);
@@ -139,10 +139,10 @@ public class GuestCheckoutTest_US extends Fixture {
         goPro.onePageCheckout.switchToReviewPage();
         goPro.reviewPage.switchToConfirmationPage();
         Assert.assertTrue(goPro.confirmationPage.isThankYouMessageAvailable(), "Thank you message is not displayed");
-        goPro.confirmationPage.deleteAllCookies();
+        goPro.homePage.deleteAllCookies();
     }
 
-    //@Test
+    @Test
     public static void GuestCheckoutWithValidData_FreeShipping_PayPal(){
         goPro.homePage.openPage(SITE_URL);
         goPro.homePage.clickSelectDifferentLocationLink();

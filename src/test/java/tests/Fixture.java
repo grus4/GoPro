@@ -74,7 +74,7 @@ public class Fixture {
         log.info("<=== End test - " + testResult.getTestName() + " ===>");
     }*/
 
-    @AfterSuite
+    //@AfterSuite
     public static void tearDown() {
         webDriverWrapper.quit();
         log.info("Tests Suite execution completed.");

@@ -30,5 +30,7 @@ public class GoPro {
         reviewPage = new ReviewPage(driverWrapper);
         confirmationPage = new ConfirmationPage(driverWrapper);
         screenShotMaker = new ScreenShotMaker(driverWrapper);
+        payPalLoginPage = new PayPalLoginPage(driverWrapper);
+        payPalAccountPage = new PayPalAccountPage(driverWrapper);
     }
 }

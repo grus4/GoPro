@@ -264,6 +264,22 @@ public class WebElementsActions {
         webDriverWrapper.switchTo().window(newWindowHandle);
     }
 
+    /**
+     * This method is used to switch to iframe by name
+     */
+    public void swithcToIframe(){
+        webDriverWrapper.switchTo().frame("injectedUl");
+
+    }
+
+    /**
+     * This method is used to switch to exit the frame
+     */
+    public void exitFromFrame(){
+        webDriverWrapper.switchTo().defaultContent();
+    }
+
+
     public void scrollPageToElement(String elementLocator) {
         Actions actions = new Actions(webDriverWrapper.getOriginalDriver());
         actions.moveToElement(getElement(elementLocator));
@@ -299,6 +315,11 @@ public class WebElementsActions {
         log.info("*Start TO* Wait For Element " + elementLocator + " Present");
         waitForElement.until(ExpectedConditions.textToBePresentInElement(elementLocator, text));
     }
+
+    /**
+     * Wait the text in the element value specified time
+     */
+
 
     /**
      * This method is used to do Focus to Element And Click
@@ -416,7 +437,6 @@ public class WebElementsActions {
 
         return newEmail;
     }
-
 
 
 }

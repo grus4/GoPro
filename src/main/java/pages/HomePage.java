@@ -24,7 +24,7 @@ public class HomePage extends Page {
     public void clickShopNowButton(){
         web.clickButton("ShopNowButton");
         log.info("Shop now button was clicked");
-        sleep(5000);
+        sleep(10000);
 
     }
 
@@ -69,16 +69,18 @@ public class HomePage extends Page {
 
 
     public void switchToHeroSessionPage(){
-        web.scrollPageToElement("HeroSessionCamera");
-        web.waitForElementPresent("HeroSessionCamera");
-        web.waitForElementToBeClickable("HeroSessionCamera");
-        web.clickElement("HeroSessionCamera");
 
-        web.waitForElementPresent("HeroSessionMainImage");
-        web.waitForElementToBeClickable("HeroSessionMainImage");
-        if(web.isElementPresent("HeroSessionMainImage")&&
-                web.isElementAvailable("HeroSessionMainImage")) {
-            log.info("Switching to Hero Sessin page was correct");
+        web.scrollPageToElement("ShopN0wHeroSessionCamera");
+        web.waitForElementPresent("ShopN0wHeroSessionCamera");
+        web.waitForElementToBeClickable("ShopN0wHeroSessionCamera");
+        web.clickElement("ShopN0wHeroSessionCamera");
+        sleep(8000);
+        web.waitForElementPresent("AddToCartButton");
+        web.waitForElementToBeClickable("AddToCartButton");
+
+        if(web.isElementPresent("AddToCartButton")&&
+                web.isElementAvailable("AddToCartButton")) {
+            log.info("Switching to Hero Session page was correct");
         } else {
             log.error("Switching to Hero Session page was INCORRECT!\n");
             Assert.fail("Switching to Hero Session page was INCORRECT!");

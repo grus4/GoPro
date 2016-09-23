@@ -20,7 +20,8 @@ public class ProductDetailsPage extends Page {
         web.waitForElementPresent("AddToCartButton");
         web.waitForElementToBeClickable("AddToCartButton");
         web.clickButton("AddToCartButton");
-        web.waitForElementPresent("CheckoutButtonInMiniCart");
+        sleep(10000);
+        //web.waitForElementPresent("CheckoutButtonInMiniCart");
 
         if(web.isElementPresent("CheckoutButtonInMiniCart")
                 && web.isElementPresent("ProductQuantityInMiniCart")){
@@ -41,6 +42,7 @@ public class ProductDetailsPage extends Page {
             web.clickButton("CheckoutButtonInMiniCart");
         } else {
             web.clickElement("CartIcon");
+            web.waitForElementToBeClickable("CheckoutButtonInMiniCart");
             web.clickButton("CheckoutButtonInMiniCart");
 
         }

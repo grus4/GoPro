@@ -85,7 +85,7 @@ public class UIMappingSingleton {
                 return By.cssSelector(locatorValue);
             } else {
                 if (locatorType.equals("id")){
-                    return By.id(locatorValue);
+                    return By.name(locatorValue);
                 } else {
                     if (locatorType.equals("className")){
                         return By.className(locatorValue);

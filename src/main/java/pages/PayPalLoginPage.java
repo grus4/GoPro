@@ -26,6 +26,10 @@ public class PayPalLoginPage extends Page{
         web.waitForElementPresent("LoginButton_PayPalForm");
         web.waitForElementToBeClickable("LoginButton_PayPalForm");
         web.clickButton("LoginButton_PayPalForm");
+        sleep(30000);
+        web.waitForElementPresent("ContinueButton");
+        web.waitForElementToBeClickable("ContinueButton");
+
 
         if(web.isElementPresent("ContinueButton")&&
                 web.isElementAvailable("ContinueButton")){

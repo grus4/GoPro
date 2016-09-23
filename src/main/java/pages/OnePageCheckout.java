@@ -137,8 +137,13 @@ public class OnePageCheckout extends Page{
     public void switchToPayPalLoginPage() {
         web.waitForElementPresent("PayPalImage");
         web.clickButton("ReviewAndCompleteButton");
-        web.waitForElementPresent("EmailField_PayPalForm");
-        web.waitForElementToBeClickable("EmailField_PayPalForm");
+        sleep(15000);
+        //webDriverWrapper.switchTo().frame("injectedUl");
+        //log.info("Switch to iframe was correct");
+        web.swithcToIframe();
+        log.info("Swithicng to iFrame was correct");
+        //web.waitForElementPresent("EmailField_PayPalForm");
+        //web.waitForElementToBeClickable("EmailField_PayPalForm");
 
         if(web.isElementPresent("EmailField_PayPalForm")&&
                 web.isElementAvailable("EmailField_PayPalForm")){
