@@ -20,7 +20,7 @@ public class GuestCheckoutTest_US extends Fixture {
         goPro.productDetailsPage.switchToShoppingCart();
         goPro.shoppingCartPage.switchToCheckoutLoginPage();
         goPro.checkoutLoginPage.fillEmailField(EMAIL);
-        goPro.checkoutLoginPage.switchToCheckoutPage();
+        goPro.checkoutLoginPage.switchToCheckoutPageAsGuest();
         goPro.onePageCheckout.fillFirstNameField(FIRSTNAME);
         goPro.onePageCheckout.fillLastNameField(LASTNAME);
         goPro.onePageCheckout.fillAddressLine_1_Field(ADDRESS_1);
@@ -53,7 +53,7 @@ public class GuestCheckoutTest_US extends Fixture {
         goPro.productDetailsPage.switchToShoppingCart();
         goPro.shoppingCartPage.switchToCheckoutLoginPage();
         goPro.checkoutLoginPage.fillEmailField(EMAIL);
-        goPro.checkoutLoginPage.switchToCheckoutPage();
+        goPro.checkoutLoginPage.switchToCheckoutPageAsGuest();
         goPro.onePageCheckout.fillFirstNameField(FIRSTNAME);
         goPro.onePageCheckout.fillLastNameField(LASTNAME);
         goPro.onePageCheckout.fillAddressLine_1_Field(ADDRESS_1);
@@ -87,7 +87,7 @@ public class GuestCheckoutTest_US extends Fixture {
         goPro.productDetailsPage.switchToShoppingCart();
         goPro.shoppingCartPage.switchToCheckoutLoginPage();
         goPro.checkoutLoginPage.fillEmailField(EMAIL);
-        goPro.checkoutLoginPage.switchToCheckoutPage();
+        goPro.checkoutLoginPage.switchToCheckoutPageAsGuest();
         goPro.onePageCheckout.fillFirstNameField(FIRSTNAME);
         goPro.onePageCheckout.fillLastNameField(LASTNAME);
         goPro.onePageCheckout.fillAddressLine_1_Field(ADDRESS_1);
@@ -120,7 +120,7 @@ public class GuestCheckoutTest_US extends Fixture {
         goPro.productDetailsPage.switchToShoppingCart();
         goPro.shoppingCartPage.switchToCheckoutLoginPage();
         goPro.checkoutLoginPage.fillEmailField(EMAIL);
-        goPro.checkoutLoginPage.switchToCheckoutPage();
+        goPro.checkoutLoginPage.switchToCheckoutPageAsGuest();
         goPro.onePageCheckout.fillFirstNameField(FIRSTNAME);
         goPro.onePageCheckout.fillLastNameField(LASTNAME);
         goPro.onePageCheckout.fillAddressLine_1_Field(ADDRESS_1);
@@ -153,7 +153,7 @@ public class GuestCheckoutTest_US extends Fixture {
         goPro.productDetailsPage.switchToShoppingCart();
         goPro.shoppingCartPage.switchToCheckoutLoginPage();
         goPro.checkoutLoginPage.fillEmailField(EMAIL);
-        goPro.checkoutLoginPage.switchToCheckoutPage();
+        goPro.checkoutLoginPage.switchToCheckoutPageAsGuest();
         goPro.onePageCheckout.fillFirstNameField(FIRSTNAME);
         goPro.onePageCheckout.fillLastNameField(LASTNAME);
         goPro.onePageCheckout.fillAddressLine_1_Field(ADDRESS_1);

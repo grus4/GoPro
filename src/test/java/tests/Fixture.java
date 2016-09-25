@@ -19,6 +19,8 @@ public class Fixture {
     protected static final String EMAIL = PropertyLoader.loadProperty("user.email");
     protected static final String PAYPAL_EMAIL = PropertyLoader.loadProperty("user.paypal.email");
     protected static final String PAYPAL_PASSWORD = PropertyLoader.loadProperty("user.paypal.password");
+    protected static final String EMAILFORREGISTEREDUSER = PropertyLoader.loadProperty("registered.user.email");
+    protected static final String PASSWORDFORREGISTEREDUSER = PropertyLoader.loadProperty("password.registered.user");
     protected static final String COUNTRY = PropertyLoader.loadProperty("country");
     protected static final String SITE_URL = PropertyLoader.loadProperty("site.url");
     protected static final String FIRSTNAME = PropertyLoader.loadProperty("first.name");
@@ -58,7 +60,7 @@ public class Fixture {
         log.info("Start Test Suite execution");
     }
 
-   /* @BeforeMethod
+    /*@BeforeMethod
     public static void beforeMethod(ITestResult testResult) {
         log.info("<=== Start test - " + testResult.getTestName() + " ===>");
     }

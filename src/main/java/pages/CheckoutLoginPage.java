@@ -28,18 +28,45 @@ public class CheckoutLoginPage extends Page {
 
     }
 
-    public void switchToCheckoutPage() {
+    public void switchToCheckoutPageAsGuest() {
         web.waitForElementPresent("CheckoutButtonOnLoginPage");
         web.waitForElementToBeClickable("CheckoutButtonOnLoginPage");
         web.clickButton("CheckoutButtonOnLoginPage");
         sleep(8000);
 
         if(web.isElementPresent("NextStepButtonInShipping")) {
-            log.info("Switching to Checkout page was correct");
+            log.info("Switching to Checkout page as Guest was correct");
         } else {
-            log.error("Switching to Checkout page was INCORRECT!\n");
-            Assert.fail("Switching to Checkout page was INCORRECT!");
+            log.error("Switching to Checkout page as Guest was INCORRECT!\n");
+            Assert.fail("Switching to Checkout page as Guest was INCORRECT!");
         }
     }
 
+    public void selectLoginCheckbox() {
+        web.waitForElementToBeClickable("LoginCheckbox");
+        web.clickElement("LoginCheckbox");
+        sleep(5000);
+    }
+
+    public void fillEmailFieldForRegisteredUser(String registeredEmail) {
+        web.input("EmailFieldForRegisteredUser", registeredEmail);
+    }
+
+    public void fillPasswordFieldForRegisteredUer(String registeredPassword) {
+        web.input("PasswordFieldForRegisteredUser", registeredPassword);
+    }
+
+    public void switchToCheckoutPageAsRegisteredUser() {
+        web.waitForElementPresent("LoginButton");
+        web.waitForElementToBeClickable("LoginButton");
+        web.clickButton("LoginButton");
+        sleep(8000);
+
+        if(web.isElementPresent("NextStepButtonInShipping")){
+            log.info("Switching to Checkout page as Registered User was correct");
+        } else {
+            log.error("Switching to Checkout page as Registered User was INCORRECT!\n");
+            Assert.fail("Switching to Checkout page as Registered User was INCORRECT!");
+        }
+    }
 }

@@ -129,6 +129,7 @@ public class OnePageCheckout extends Page{
     }
 
     public void selectPayPal() {
+        web.waitForElementToBeClickable("PayPalRadioButton");
         web.clickElement("PayPalRadioButton");
         web.waitElementNotVisible("SecurityCodeField", 3);
     }
