@@ -38,6 +38,7 @@ public class RegisteredUserCheckoutTest_USA extends Fixture{
         goPro.onePageCheckout.switchToReviewPage();
         goPro.reviewPage.switchToConfirmationPage();
         Assert.assertTrue(goPro.confirmationPage.isThankYouMessageAvailable(), "Thank you message is not displayed");
+        goPro.confirmationPage.switchToHomePage();
         goPro.homePage.deleteAllCookies();
     }
 }
