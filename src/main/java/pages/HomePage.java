@@ -24,7 +24,7 @@ public class HomePage extends Page {
     public void clickShopNowButton(){
         web.clickButton("ShopNowButton");
         log.info("Shop now button was clicked");
-        sleep(10000);
+        sleep(13000);
 
     }
 
@@ -74,7 +74,7 @@ public class HomePage extends Page {
         web.waitForElementPresent("ShopN0wHeroSessionCamera");
         web.waitForElementToBeClickable("ShopN0wHeroSessionCamera");
         web.clickElement("ShopN0wHeroSessionCamera");
-        sleep(8000);
+        sleep(15000);
         web.waitForElementPresent("AddToCartButton");
         web.waitForElementToBeClickable("AddToCartButton");
 

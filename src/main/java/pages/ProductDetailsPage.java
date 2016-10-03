@@ -47,6 +47,7 @@ public class ProductDetailsPage extends Page {
 
         }
 
+        sleep(6000);
         web.waitForElementPresent("CheckoutButtonInShoppingCart");
         web.waitForElementToBeClickable("CheckoutButtonInShoppingCart");
 

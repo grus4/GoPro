@@ -38,6 +38,7 @@ public class OnePageCheckout extends Page{
 
     public void fillCityField(String city) {
         web.input("CityField", city);
+        sleep(3000);
 
     }
 
@@ -65,7 +66,7 @@ public class OnePageCheckout extends Page{
         //web.waitForElementToBeClickable("NextStepButtonInShipping");
         sleep(10000);
         web.clickButton("NextStepButtonInShipping");
-        sleep(10000);
+        sleep(15000);
         web.waitForElementPresent("CardNameField");
         web.waitForElementToBeClickable("CardNameField");
 
@@ -124,7 +125,6 @@ public class OnePageCheckout extends Page{
 
     public void selectOvernightShipping(){
         sleep(5000);
-        //web.waitForElementToBeClickable("OvernightShippingRadioButton");
         web.clickElement("OvernightShippingRadioButton");
     }
 
@@ -138,7 +138,7 @@ public class OnePageCheckout extends Page{
     public void switchToPayPalLoginPage() {
         web.waitForElementPresent("PayPalImage");
         web.clickButton("ReviewAndCompleteButton");
-        sleep(15000);
+        sleep(20000);
         //webDriverWrapper.switchTo().frame("injectedUl");
         //log.info("Switch to iframe was correct");
         web.swithcToIframe();

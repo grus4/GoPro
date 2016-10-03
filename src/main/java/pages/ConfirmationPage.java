@@ -7,9 +7,6 @@ import utils.WebDriverWrapper;
  */
 public class ConfirmationPage extends Page {
 
-    public ConfirmationPage(WebDriverWrapper dr, String page) {
-        super(dr, page);
-    }
 
     public ConfirmationPage(WebDriverWrapper dr) {
         super(dr);
@@ -29,6 +26,8 @@ public class ConfirmationPage extends Page {
 
     public void switchToHomePage(){
         web.clickLink("ShopCategory");
-
+        web.waitForElementPresent("ShopN0wHeroSessionCamera");
+        web.waitForElementToBeClickable("ShopN0wHeroSessionCamera");
+        sleep(12000);
     }
 }

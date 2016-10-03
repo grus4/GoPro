@@ -19,10 +19,10 @@ public class ReviewPage extends Page{
     public void switchToConfirmationPage() {
         web.waitForElementPresent("CompletePurchaseButton");
         web.waitForElementToBeClickable("CompletePurchaseButton");
-        sleep(5000);
+        sleep(6000);
         web.clickButton("CompletePurchaseButton");
         //web.waitForElementPresent("OrderNumber");
-        sleep(6000);
+        sleep(10000);
 
         if(web.isElementPresent("OrderNumber")&&
                 web.isElementAvailable("OrderNumber")){
