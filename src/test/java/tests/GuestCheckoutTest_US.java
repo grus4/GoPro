@@ -38,6 +38,7 @@ public class GuestCheckoutTest_US extends Fixture {
         goPro.onePageCheckout.switchToReviewPage();
         goPro.reviewPage.switchToConfirmationPage();
         Assert.assertTrue(goPro.confirmationPage.isThankYouMessageAvailable(), "Thank you message is not displayed");
+        goPro.confirmationPage.switchToHomePage();
         goPro.homePage.deleteAllCookies();
 
     }
@@ -72,12 +73,13 @@ public class GuestCheckoutTest_US extends Fixture {
         goPro.onePageCheckout.switchToReviewPage();
         goPro.reviewPage.switchToConfirmationPage();
         Assert.assertTrue(goPro.confirmationPage.isThankYouMessageAvailable(), "Thank you message is not displayed");
+        goPro.confirmationPage.switchToHomePage();
         goPro.homePage.deleteAllCookies();
 
     }
 
     @Test
-    public static void GuestCheckoutWithValidData_FreeShipping_AMEX(){
+    public static void guestCheckoutWithValidData_FreeShipping_AMEX(){
         goPro.homePage.openPage(SITE_URL);
         goPro.homePage.clickSelectDifferentLocationLink();
         goPro.homePage.selectCountryFromCountryConfirmDropDown(COUNTRY);
@@ -105,12 +107,13 @@ public class GuestCheckoutTest_US extends Fixture {
         goPro.onePageCheckout.switchToReviewPage();
         goPro.reviewPage.switchToConfirmationPage();
         Assert.assertTrue(goPro.confirmationPage.isThankYouMessageAvailable(), "Thank you message is not displayed");
-        goPro.confirmationPage.deleteAllCookies();
+        goPro.confirmationPage.switchToHomePage();
+        goPro.homePage.deleteAllCookies();
 
     }
 
     @Test
-    public static void GuestCheckoutWithValidData_OvernightShipping_Discover(){
+    public static void guestCheckoutWithValidData_OvernightShipping_Discover(){
         goPro.homePage.openPage(SITE_URL);
         goPro.homePage.clickSelectDifferentLocationLink();
         goPro.homePage.selectCountryFromCountryConfirmDropDown(COUNTRY);
@@ -139,16 +142,17 @@ public class GuestCheckoutTest_US extends Fixture {
         goPro.onePageCheckout.switchToReviewPage();
         goPro.reviewPage.switchToConfirmationPage();
         Assert.assertTrue(goPro.confirmationPage.isThankYouMessageAvailable(), "Thank you message is not displayed");
+        goPro.confirmationPage.switchToHomePage();
         goPro.homePage.deleteAllCookies();
     }
 
     @Test
-    public static void GuestCheckoutWithValidData_FreeShipping_PayPal(){
+    public static void guestCheckoutWithValidData_FreeShipping_PayPal(){
         goPro.homePage.openPage(SITE_URL);
         goPro.homePage.clickSelectDifferentLocationLink();
         goPro.homePage.selectCountryFromCountryConfirmDropDown(COUNTRY);
         goPro.homePage.clickShopNowButton();
-        goPro.homePage.openHeroSessionProduct();
+        goPro.homePage.switchToHeroSessionPage();
         goPro.productDetailsPage.addProductToCart();
         goPro.productDetailsPage.switchToShoppingCart();
         goPro.shoppingCartPage.switchToCheckoutLoginPage();
@@ -171,6 +175,7 @@ public class GuestCheckoutTest_US extends Fixture {
         goPro.payPalAccountPage.switchToReviewPage();
         goPro.reviewPage.switchToConfirmationPage();
         Assert.assertTrue(goPro.confirmationPage.isThankYouMessageAvailable(), "Thank you message is not displayed");
+        goPro.confirmationPage.switchToHomePage();
         goPro.confirmationPage.deleteAllCookies();
     }
 }

@@ -60,7 +60,7 @@ public class Fixture {
         log.info("Start Test Suite execution");
     }
 
-    /*@BeforeMethod
+   /* @BeforeMethod
     public static void beforeMethod(ITestResult testResult) {
         log.info("<=== Start test - " + testResult.getTestName() + " ===>");
     }
@@ -74,8 +74,8 @@ public class Fixture {
             goPro.screenShotMaker.takeScreenShot(testResult.getTestName());
         }
         log.info("<=== End test - " + testResult.getTestName() + " ===>");
-    }*/
-
+    }
+*/
     //@AfterSuite
     public static void tearDown() {
         webDriverWrapper.quit();

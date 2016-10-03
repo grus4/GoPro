@@ -3,6 +3,7 @@
     <test name="SmokeTest">
         <classes>
             <class name="tests.GuestCheckoutTest_US"/>
+            <class name="tests.RegisteredUserCheckoutTest_USA"/>
         </classes>
     </test>
 </suite>
