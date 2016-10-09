@@ -1,9 +1,12 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="FirstTestSuite" verbose="1">
     <test name="SmokeTest">
+
         <classes>
             <class name="tests.GuestCheckoutTest_US"/>
             <class name="tests.RegisteredUserCheckoutTest_USA"/>
+            <class name="tests.GuestCheckoutTest_International"/>
+            <class name="tests.RegisteredUserInternationalCheckoutTest"/>
         </classes>
     </test>
 </suite>

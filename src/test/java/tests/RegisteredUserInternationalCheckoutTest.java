@@ -1,16 +1,18 @@
 package tests;
 
-
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class RegisteredUserCheckoutTest_USA extends Fixture{
+/**
+ * Created by Rus on 09.10.2016.
+ */
+public class RegisteredUserInternationalCheckoutTest extends Fixture {
 
     @Test
-    public void registeredCheckoutWithValidData_OvernightShipping_VISA(){
+    public void registeredUserInternationalCheckoutWithValidData_VISA(){
         goPro.homePage.openPage(SITE_URL);
         goPro.homePage.clickSelectDifferentLocationLink();
-        goPro.homePage.selectCountryFromCountryConfirmDropDown(COUNTRY);
+        goPro.homePage.selectCountryFromCountryConfirmDropDown(INT_COUNTRY);
         goPro.homePage.clickShopNowButton();
         goPro.homePage.switchToHeroSessionPage();
         goPro.homePage.checkCorrectSwitchingToHeroSessionPage();
@@ -23,14 +25,13 @@ public class RegisteredUserCheckoutTest_USA extends Fixture{
         goPro.checkoutLoginPage.switchToCheckoutPageAsRegisteredUser();
         goPro.onePageCheckout.fillFirstNameField(FIRSTNAME);
         goPro.onePageCheckout.fillLastNameField(LASTNAME);
-        goPro.onePageCheckout.fillAddressLine_1_Field(ADDRESS_1);
+        goPro.onePageCheckout.fillAddressLine_1_Field(ADDRESS_INT);
         goPro.onePageCheckout.fillAddressLine_2_Field("");
-        goPro.onePageCheckout.fillCityField(CITY);
-        goPro.onePageCheckout.selectState(STATE);
-        goPro.onePageCheckout.fillZipField(ZIP);
+        goPro.onePageCheckout.fillCityField(CITY_INT);
+        goPro.onePageCheckout.selectState(STATE_INT);
+        goPro.onePageCheckout.fillZipField(ZIP_INT);
         goPro.onePageCheckout.fillPhoneField(PHONE);
-        goPro.onePageCheckout.selectOvernightShipping();
-        goPro.onePageCheckout.switchToPaymentSection();
+        goPro.onePageCheckout.switchToPaymentSectionOnInternationalSite();
         goPro.onePageCheckout.checkCorrectSwitchingToPaymentSection();
         goPro.onePageCheckout.fillCardName(CARDNAME_VISA);
         goPro.onePageCheckout.fillCardNumber(CARDNUMBER_VISA);
@@ -45,10 +46,10 @@ public class RegisteredUserCheckoutTest_USA extends Fixture{
     }
 
     @Test
-    public void registeredCheckoutWithValidData_FreeShipping_MasterCard() {
+    public void registeredUserInternationalCheckoutWithValidData_MasterCard(){
         goPro.homePage.openPage(SITE_URL);
         goPro.homePage.clickSelectDifferentLocationLink();
-        goPro.homePage.selectCountryFromCountryConfirmDropDown(COUNTRY);
+        goPro.homePage.selectCountryFromCountryConfirmDropDown(INT_COUNTRY);
         goPro.homePage.clickShopNowButton();
         goPro.homePage.switchToHeroSessionPage();
         goPro.homePage.checkCorrectSwitchingToHeroSessionPage();
@@ -61,13 +62,13 @@ public class RegisteredUserCheckoutTest_USA extends Fixture{
         goPro.checkoutLoginPage.switchToCheckoutPageAsRegisteredUser();
         goPro.onePageCheckout.fillFirstNameField(FIRSTNAME);
         goPro.onePageCheckout.fillLastNameField(LASTNAME);
-        goPro.onePageCheckout.fillAddressLine_1_Field(ADDRESS_1);
+        goPro.onePageCheckout.fillAddressLine_1_Field(ADDRESS_INT);
         goPro.onePageCheckout.fillAddressLine_2_Field("");
-        goPro.onePageCheckout.fillCityField(CITY);
-        goPro.onePageCheckout.selectState(STATE);
-        goPro.onePageCheckout.fillZipField(ZIP);
+        goPro.onePageCheckout.fillCityField(CITY_INT);
+        goPro.onePageCheckout.selectState(STATE_INT);
+        goPro.onePageCheckout.fillZipField(ZIP_INT);
         goPro.onePageCheckout.fillPhoneField(PHONE);
-        goPro.onePageCheckout.switchToPaymentSection();
+        goPro.onePageCheckout.switchToPaymentSectionOnInternationalSite();
         goPro.onePageCheckout.checkCorrectSwitchingToPaymentSection();
         goPro.onePageCheckout.fillCardName(CARDNAME_MASTERCARD);
         goPro.onePageCheckout.fillCardNumber(CARDNUMBER_MASTERCARD);
@@ -82,10 +83,10 @@ public class RegisteredUserCheckoutTest_USA extends Fixture{
     }
 
     @Test
-    public void registeredCheckoutWithValidData_OvernightShipping_AMEX(){
+    public void registeredUserInternationalCheckoutWithValidData_AMEX(){
         goPro.homePage.openPage(SITE_URL);
         goPro.homePage.clickSelectDifferentLocationLink();
-        goPro.homePage.selectCountryFromCountryConfirmDropDown(COUNTRY);
+        goPro.homePage.selectCountryFromCountryConfirmDropDown(INT_COUNTRY);
         goPro.homePage.clickShopNowButton();
         goPro.homePage.switchToHeroSessionPage();
         goPro.homePage.checkCorrectSwitchingToHeroSessionPage();
@@ -98,14 +99,13 @@ public class RegisteredUserCheckoutTest_USA extends Fixture{
         goPro.checkoutLoginPage.switchToCheckoutPageAsRegisteredUser();
         goPro.onePageCheckout.fillFirstNameField(FIRSTNAME);
         goPro.onePageCheckout.fillLastNameField(LASTNAME);
-        goPro.onePageCheckout.fillAddressLine_1_Field(ADDRESS_1);
+        goPro.onePageCheckout.fillAddressLine_1_Field(ADDRESS_INT);
         goPro.onePageCheckout.fillAddressLine_2_Field("");
-        goPro.onePageCheckout.fillCityField(CITY);
-        goPro.onePageCheckout.selectState(STATE);
-        goPro.onePageCheckout.fillZipField(ZIP);
+        goPro.onePageCheckout.fillCityField(CITY_INT);
+        goPro.onePageCheckout.selectState(STATE_INT);
+        goPro.onePageCheckout.fillZipField(ZIP_INT);
         goPro.onePageCheckout.fillPhoneField(PHONE);
-        goPro.onePageCheckout.selectOvernightShipping();
-        goPro.onePageCheckout.switchToPaymentSection();
+        goPro.onePageCheckout.switchToPaymentSectionOnInternationalSite();
         goPro.onePageCheckout.checkCorrectSwitchingToPaymentSection();
         goPro.onePageCheckout.fillCardName(CARDNAME_AMEX);
         goPro.onePageCheckout.fillCardNumber(CARDNUMBER_AMEX);
@@ -119,48 +119,12 @@ public class RegisteredUserCheckoutTest_USA extends Fixture{
         goPro.homePage.deleteAllCookies();
     }
 
-    @Test
-    public void registeredCheckoutWithValidData_FreeShipping_Discover(){
-        goPro.homePage.openPage(SITE_URL);
-        goPro.homePage.clickSelectDifferentLocationLink();
-        goPro.homePage.selectCountryFromCountryConfirmDropDown(COUNTRY);
-        goPro.homePage.clickShopNowButton();
-        goPro.homePage.switchToHeroSessionPage();
-        goPro.homePage.checkCorrectSwitchingToHeroSessionPage();
-        goPro.productDetailsPage.addProductToCart();
-        goPro.productDetailsPage.switchToShoppingCart();
-        goPro.shoppingCartPage.switchToCheckoutLoginPage();
-        goPro.checkoutLoginPage.selectLoginCheckbox();
-        goPro.checkoutLoginPage.fillEmailFieldForRegisteredUser(EMAILFORREGISTEREDUSER);
-        goPro.checkoutLoginPage.fillPasswordFieldForRegisteredUer(PASSWORDFORREGISTEREDUSER);
-        goPro.checkoutLoginPage.switchToCheckoutPageAsRegisteredUser();
-        goPro.onePageCheckout.fillFirstNameField(FIRSTNAME);
-        goPro.onePageCheckout.fillLastNameField(LASTNAME);
-        goPro.onePageCheckout.fillAddressLine_1_Field(ADDRESS_1);
-        goPro.onePageCheckout.fillAddressLine_2_Field("");
-        goPro.onePageCheckout.fillCityField(CITY);
-        goPro.onePageCheckout.selectState(STATE);
-        goPro.onePageCheckout.fillZipField(ZIP);
-        goPro.onePageCheckout.fillPhoneField(PHONE);
-        goPro.onePageCheckout.switchToPaymentSection();
-        goPro.onePageCheckout.checkCorrectSwitchingToPaymentSection();
-        goPro.onePageCheckout.fillCardName(CARDNAME_DISCOVER);
-        goPro.onePageCheckout.fillCardNumber(CARDNUMBER_DISCOVER);
-        goPro.onePageCheckout.selectMonth(MONTH);
-        goPro.onePageCheckout.selectYear(YEAR);
-        goPro.onePageCheckout.fillSecurityCode(DISCOVER_CVV);
-        goPro.onePageCheckout.switchToReviewPage();
-        goPro.reviewPage.switchToConfirmationPage();
-        Assert.assertTrue(goPro.confirmationPage.isThankYouMessageAvailable(), "Thank you message is not displayed");
-        goPro.confirmationPage.switchToHomePage();
-        goPro.homePage.deleteAllCookies();
-    }
 
     @Test
-    public void registeredCheckoutWithValidData_OvernightShipping_PayPal(){
+    public void registeredUserInternationalCheckoutWithValidData_PayPal(){
         goPro.homePage.openPage(SITE_URL);
         goPro.homePage.clickSelectDifferentLocationLink();
-        goPro.homePage.selectCountryFromCountryConfirmDropDown(COUNTRY);
+        goPro.homePage.selectCountryFromCountryConfirmDropDown(INT_COUNTRY);
         goPro.homePage.clickShopNowButton();
         goPro.homePage.switchToHeroSessionPage();
         goPro.homePage.checkCorrectSwitchingToHeroSessionPage();
@@ -173,14 +137,13 @@ public class RegisteredUserCheckoutTest_USA extends Fixture{
         goPro.checkoutLoginPage.switchToCheckoutPageAsRegisteredUser();
         goPro.onePageCheckout.fillFirstNameField(FIRSTNAME);
         goPro.onePageCheckout.fillLastNameField(LASTNAME);
-        goPro.onePageCheckout.fillAddressLine_1_Field(ADDRESS_1);
+        goPro.onePageCheckout.fillAddressLine_1_Field(ADDRESS_INT);
         goPro.onePageCheckout.fillAddressLine_2_Field("");
-        goPro.onePageCheckout.fillCityField(CITY);
-        goPro.onePageCheckout.selectState(STATE);
-        goPro.onePageCheckout.fillZipField(ZIP);
+        goPro.onePageCheckout.fillCityField(CITY_INT);
+        goPro.onePageCheckout.selectState(STATE_INT);
+        goPro.onePageCheckout.fillZipField(ZIP_INT);
         goPro.onePageCheckout.fillPhoneField(PHONE);
-        goPro.onePageCheckout.selectOvernightShipping();
-        goPro.onePageCheckout.switchToPaymentSection();
+        goPro.onePageCheckout.switchToPaymentSectionOnInternationalSite();
         goPro.onePageCheckout.checkCorrectSwitchingToPaymentSection();
         goPro.onePageCheckout.selectPayPal();
         goPro.onePageCheckout.switchToPayPalLoginPage();

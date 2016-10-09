@@ -78,6 +78,9 @@ public class HomePage extends Page {
         web.waitForElementPresent("AddToCartButton");
         web.waitForElementToBeClickable("AddToCartButton");
 
+    }
+    public void checkCorrectSwitchingToHeroSessionPage(){
+
         if(web.isElementPresent("AddToCartButton")&&
                 web.isElementAvailable("AddToCartButton")) {
             log.info("Switching to Hero Session page was correct");

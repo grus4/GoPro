@@ -22,6 +22,7 @@ public class Fixture {
     protected static final String EMAILFORREGISTEREDUSER = PropertyLoader.loadProperty("registered.user.email");
     protected static final String PASSWORDFORREGISTEREDUSER = PropertyLoader.loadProperty("password.registered.user");
     protected static final String COUNTRY = PropertyLoader.loadProperty("country");
+    protected static final String INT_COUNTRY = PropertyLoader.loadProperty("country.international");
     protected static final String SITE_URL = PropertyLoader.loadProperty("site.url");
     protected static final String FIRSTNAME = PropertyLoader.loadProperty("first.name");
     protected static final String LASTNAME = PropertyLoader.loadProperty("last.name");
@@ -30,6 +31,10 @@ public class Fixture {
     protected static final String STATE = PropertyLoader.loadProperty("state");
     protected static final String ZIP = PropertyLoader.loadProperty("zip");
     protected static final String PHONE = PropertyLoader.loadProperty("phone");
+    protected static final String ADDRESS_INT = PropertyLoader.loadProperty("address.international");
+    protected static final String CITY_INT = PropertyLoader.loadProperty("city.international");
+    protected static final String STATE_INT = PropertyLoader.loadProperty("state.international");
+    protected static final String ZIP_INT = PropertyLoader.loadProperty("zip.international");
     protected static final String CARDNAME_VISA = PropertyLoader.loadProperty("card.name1");
     protected static final String CARDNUMBER_VISA = PropertyLoader.loadProperty("card.number1");
     protected static final String CARDNAME_MASTERCARD = PropertyLoader.loadProperty("card.name2");

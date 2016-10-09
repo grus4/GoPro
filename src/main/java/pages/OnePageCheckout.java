@@ -70,13 +70,15 @@ public class OnePageCheckout extends Page{
         web.waitForElementPresent("CardNameField");
         web.waitForElementToBeClickable("CardNameField");
 
+    }
+
+    public void checkCorrectSwitchingToPaymentSection(){
         if(web.isElementPresent("ReviewAndCompleteButton")){
             log.info("Switching to Payment section was correct");
         } else {
             log.error("Switching to Payment section was INCORRECT!\n");
             Assert.fail("Switching to Payment section was INCORRECT!");
         }
-
     }
 
 
@@ -153,5 +155,17 @@ public class OnePageCheckout extends Page{
             log.error("Switching to PayPal Login Page was INCORRECT!\n");
             Assert.fail("Switching to PayPal Login Page was INCORRECT!");
         }
+    }
+
+    public void switchToPaymentSectionOnInternationalSite() {
+        sleep(10000);
+        web.clickButton("NextStepButtonInShipping");
+        web.waitForElementToBeClickable("SuggestedAddressIsCorrectButton");
+        web.clickButton("SuggestedAddressIsCorrectButton");
+
+        sleep(15000);
+        web.waitForElementPresent("CardNameField");
+        web.waitForElementToBeClickable("CardNameField");
+
     }
 }

@@ -9,13 +9,14 @@ import org.testng.annotations.Test;
 public class GuestCheckoutTest_US extends Fixture {
 
 
-    @Test ()
+    @Test
     public static void guestCheckoutWithValidData_FreeShipping_VISA(){
         goPro.homePage.openPage(SITE_URL);
         goPro.homePage.clickSelectDifferentLocationLink();
         goPro.homePage.selectCountryFromCountryConfirmDropDown(COUNTRY);
         goPro.homePage.clickShopNowButton();
         goPro.homePage.switchToHeroSessionPage();
+        goPro.homePage.checkCorrectSwitchingToHeroSessionPage();
         goPro.productDetailsPage.addProductToCart();
         goPro.productDetailsPage.switchToShoppingCart();
         goPro.shoppingCartPage.switchToCheckoutLoginPage();
@@ -30,6 +31,7 @@ public class GuestCheckoutTest_US extends Fixture {
         goPro.onePageCheckout.fillZipField(ZIP);
         goPro.onePageCheckout.fillPhoneField(PHONE);
         goPro.onePageCheckout.switchToPaymentSection();
+        goPro.onePageCheckout.checkCorrectSwitchingToPaymentSection();
         goPro.onePageCheckout.fillCardName(CARDNAME_VISA);
         goPro.onePageCheckout.fillCardNumber(CARDNUMBER_VISA);
         goPro.onePageCheckout.selectMonth(MONTH);
@@ -50,6 +52,7 @@ public class GuestCheckoutTest_US extends Fixture {
         goPro.homePage.selectCountryFromCountryConfirmDropDown(COUNTRY);
         goPro.homePage.clickShopNowButton();
         goPro.homePage.switchToHeroSessionPage();
+        goPro.homePage.checkCorrectSwitchingToHeroSessionPage();
         goPro.productDetailsPage.addProductToCart();
         goPro.productDetailsPage.switchToShoppingCart();
         goPro.shoppingCartPage.switchToCheckoutLoginPage();
@@ -65,6 +68,7 @@ public class GuestCheckoutTest_US extends Fixture {
         goPro.onePageCheckout.fillPhoneField(PHONE);
         goPro.onePageCheckout.selectOvernightShipping();
         goPro.onePageCheckout.switchToPaymentSection();
+        goPro.onePageCheckout.checkCorrectSwitchingToPaymentSection();
         goPro.onePageCheckout.fillCardName(CARDNAME_MASTERCARD);
         goPro.onePageCheckout.fillCardNumber(CARDNUMBER_MASTERCARD);
         goPro.onePageCheckout.selectMonth(MONTH);
@@ -85,6 +89,7 @@ public class GuestCheckoutTest_US extends Fixture {
         goPro.homePage.selectCountryFromCountryConfirmDropDown(COUNTRY);
         goPro.homePage.clickShopNowButton();
         goPro.homePage.switchToHeroSessionPage();
+        goPro.homePage.checkCorrectSwitchingToHeroSessionPage();
         goPro.productDetailsPage.addProductToCart();
         goPro.productDetailsPage.switchToShoppingCart();
         goPro.shoppingCartPage.switchToCheckoutLoginPage();
@@ -99,6 +104,7 @@ public class GuestCheckoutTest_US extends Fixture {
         goPro.onePageCheckout.fillZipField(ZIP);
         goPro.onePageCheckout.fillPhoneField(PHONE);
         goPro.onePageCheckout.switchToPaymentSection();
+        goPro.onePageCheckout.checkCorrectSwitchingToPaymentSection();
         goPro.onePageCheckout.fillCardName(CARDNAME_AMEX);
         goPro.onePageCheckout.fillCardNumber(CARDNUMBER_AMEX);
         goPro.onePageCheckout.selectMonth(MONTH);
@@ -119,6 +125,7 @@ public class GuestCheckoutTest_US extends Fixture {
         goPro.homePage.selectCountryFromCountryConfirmDropDown(COUNTRY);
         goPro.homePage.clickShopNowButton();
         goPro.homePage.switchToHeroSessionPage();
+        goPro.homePage.checkCorrectSwitchingToHeroSessionPage();
         goPro.productDetailsPage.addProductToCart();
         goPro.productDetailsPage.switchToShoppingCart();
         goPro.shoppingCartPage.switchToCheckoutLoginPage();
@@ -134,6 +141,7 @@ public class GuestCheckoutTest_US extends Fixture {
         goPro.onePageCheckout.fillPhoneField(PHONE);
         goPro.onePageCheckout.selectOvernightShipping();
         goPro.onePageCheckout.switchToPaymentSection();
+        goPro.onePageCheckout.checkCorrectSwitchingToPaymentSection();
         goPro.onePageCheckout.fillCardName(CARDNAME_DISCOVER);
         goPro.onePageCheckout.fillCardNumber(CARDNUMBER_DISCOVER);
         goPro.onePageCheckout.selectMonth(MONTH);
@@ -153,6 +161,8 @@ public class GuestCheckoutTest_US extends Fixture {
         goPro.homePage.selectCountryFromCountryConfirmDropDown(COUNTRY);
         goPro.homePage.clickShopNowButton();
         goPro.homePage.switchToHeroSessionPage();
+        goPro.homePage.checkCorrectSwitchingToHeroSessionPage();
+        goPro.homePage.checkCorrectSwitchingToHeroSessionPage();
         goPro.productDetailsPage.addProductToCart();
         goPro.productDetailsPage.switchToShoppingCart();
         goPro.shoppingCartPage.switchToCheckoutLoginPage();
@@ -167,6 +177,7 @@ public class GuestCheckoutTest_US extends Fixture {
         goPro.onePageCheckout.fillZipField(ZIP);
         goPro.onePageCheckout.fillPhoneField(PHONE);
         goPro.onePageCheckout.switchToPaymentSection();
+        goPro.onePageCheckout.checkCorrectSwitchingToPaymentSection();
         goPro.onePageCheckout.selectPayPal();
         goPro.onePageCheckout.switchToPayPalLoginPage();
         goPro.payPalLoginPage.fillEmailFieldPayPalForm(PAYPAL_EMAIL);
