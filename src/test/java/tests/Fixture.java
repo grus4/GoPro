@@ -79,8 +79,7 @@ public class Fixture {
             goPro.screenShotMaker.takeScreenShot(testResult.getTestName());
         }
         log.info("<=== End test - " + testResult.getTestName() + " ===>");
-    }
-*/
+    }*/
     //@AfterSuite
     public static void tearDown() {
         webDriverWrapper.quit();

@@ -19,6 +19,9 @@ public class GoPro {
     public ScreenShotMaker screenShotMaker;
     public PayPalLoginPage payPalLoginPage;
     public PayPalAccountPage payPalAccountPage;
+    public PlusPDP plusPDP;
+    public GoProSignInPage goProSignInPage;
+    public CreateNewAccountPage createNewAccountPage;
 
     public GoPro(WebDriverWrapper driverWrapper) {
         web = new WebElementsActions(driverWrapper);
@@ -32,5 +35,9 @@ public class GoPro {
         screenShotMaker = new ScreenShotMaker(driverWrapper);
         payPalLoginPage = new PayPalLoginPage(driverWrapper);
         payPalAccountPage = new PayPalAccountPage(driverWrapper);
+        plusPDP = new PlusPDP(driverWrapper);
+        goProSignInPage = new GoProSignInPage(driverWrapper);
+        createNewAccountPage = new CreateNewAccountPage(driverWrapper);
     }
+
 }

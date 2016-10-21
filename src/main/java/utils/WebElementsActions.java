@@ -32,7 +32,7 @@ public class WebElementsActions {
 
     public void clickElement(String elementLocator) {
         webDriverWrapper.findElement(UIMappingSingleton.ui(elementLocator)).click();
-        log.info("Click on Button " + elementLocator);
+        log.info("Click on Element " + elementLocator);
     }
 
     /**

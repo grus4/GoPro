@@ -91,4 +91,20 @@ public class HomePage extends Page {
     }
 
 
+    public void switchToPlusPDP() {
+        web.clickElement("PlusCategory");
+        web.waitForElementPresent("StartFor60DayTrialButton");
+        web.waitForElementToBeClickable("StartFor60DayTrialButton");
+        checkCorrectSwitchingToPlusPDP();
+    }
+
+    public void checkCorrectSwitchingToPlusPDP(){
+        if(web.isElementPresent("StartFor60DayTrialButton")&&
+                web.isElementAvailable("StartFor60DayTrialButton")){
+            log.info("Switching to Plus PDP was correct");
+        } else {
+            log.error("Switching to Plus PDP was INCORRECT!\n");
+            Assert.fail("Switching to Plus PDP was INCORRECT!");
+        }
+    }
 }

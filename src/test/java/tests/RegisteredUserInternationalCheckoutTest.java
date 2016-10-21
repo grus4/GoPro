@@ -120,7 +120,7 @@ public class RegisteredUserInternationalCheckoutTest extends Fixture {
     }
 
 
-    @Test
+    @Test(groups = {"PayPal_func_test"})
     public void registeredUserInternationalCheckoutWithValidData_PayPal(){
         goPro.homePage.openPage(SITE_URL);
         goPro.homePage.clickSelectDifferentLocationLink();
