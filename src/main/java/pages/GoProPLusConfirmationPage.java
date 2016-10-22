@@ -14,7 +14,7 @@ public class GoProPLusConfirmationPage extends Page{
     }
 
     public boolean isThankYouMessageIsAvailable() {
-        if(web.isElementPresent("")) {
+        if(web.isElementPresent("ExploreAppsButton")) {
             log.info("Thank you message is displayed and the GoPro Plus Order is successfully created");
             return true;
         } else {

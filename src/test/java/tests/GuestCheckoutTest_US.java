@@ -189,4 +189,22 @@ public class GuestCheckoutTest_US extends Fixture {
         goPro.confirmationPage.switchToHomePage();
         goPro.confirmationPage.deleteAllCookies();
     }
+
+    @Test
+    public static void guestCheckout_EmptyFieldsValidationInShippingForm(){
+        goPro.homePage.openPage(SITE_URL);
+        goPro.homePage.clickSelectDifferentLocationLink();
+        goPro.homePage.selectCountryFromCountryConfirmDropDown(COUNTRY);
+        goPro.homePage.clickShopNowButton();
+        goPro.homePage.switchToHeroSessionPage();
+        goPro.homePage.checkCorrectSwitchingToHeroSessionPage();
+        goPro.productDetailsPage.addProductToCart();
+        goPro.productDetailsPage.switchToShoppingCart();
+        goPro.shoppingCartPage.switchToCheckoutLoginPage();
+        goPro.checkoutLoginPage.fillEmailField(EMAIL);
+        goPro.checkoutLoginPage.switchToCheckoutPageAsGuest();
+        goPro.onePageCheckout.leaveAllRequiredFieldsEmpty();
+        goPro.onePageCheckout.clickTheNextStepButtonInShipping();
+
+    }
 }

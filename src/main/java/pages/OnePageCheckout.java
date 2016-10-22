@@ -166,4 +166,45 @@ public class OnePageCheckout extends Page{
         web.waitForElementToBeClickable("CardNameField");
 
     }
+
+
+    public void leaveAllRequiredFieldsEmpty() {
+        web.input("FirstNameField", "");
+        web.input("LastNameField", "");
+        web.input("Address_1_Field", "");
+        web.input("Address_2_Field", "");
+        web.input("CityField", "");
+        web.input("ZipCodeField", "");
+        web.input("PhoneNumberField", "");
+    }
+
+    public void checkValidationEmptyFirstNameField(){
+        if(web.isElementPresent("FirstNameErrorMessage")
+                && web.getElementText("FirstNameErrorMessage").equals("Please enter a First name")){
+            log.info("First Name Error under the empty field is displayed correctly");
+        } else {
+            log.error("First Name Error under the empty field is displayed INCORRECTLY" + "\n"
+                    + "is FirstNameErrorMessage present - " + web.isElementPresent("FirstNameErrorMessage")
+                    + "\n" + "FirstNameErrorMessage - " + web.getElementText("FirstNameErrorMessage"));
+            Assert.fail("First Name Error under the empty field is displayed INCORRECTLY" + "\n"
+                    + "is FirstNameErrorMessage present - " + web.isElementPresent("FirstNameErrorMessage")
+                    + "\n" + "FirstNameErrorMessage - " + web.getElementText("FirstNameErrorMessage"));
+        }
+    }
+
+    public void checkValidationEmptyLastNameField(){
+        if(web.isElementPresent("LastNameErrorMessage")
+                && web.getElementText("LastNameErrorMessage").equals("Please enter a Last name")){
+            log.info("Last Name Error under the empty field is displayed correctly");
+        } else {
+            log.error("Last Name Error under the empty field is displayed INCORRECTLY" + "\n"
+            + "is LastNameErrorMessage present - " + web.isElementPresent("LastNameErrorMessage")
+            + "\n" + "LastNameErrorMessage present - " + web.getElementText("LastNameErrorMessage"));
+            Assert.fail("Last Name Error under the empty field is displayed INCORRECTLY" + "\n"
+                    + "is LastNameErrorMessage present - " + web.isElementPresent("LastNameErrorMessage")
+                    + "\n" + "LastNameErrorMessage present - " + web.getElementText("LastNameErrorMessage"));
+        }
+
+    }
+
 }
