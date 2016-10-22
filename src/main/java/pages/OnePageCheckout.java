@@ -141,8 +141,6 @@ public class OnePageCheckout extends Page{
         web.waitForElementPresent("PayPalImage");
         web.clickButton("ReviewAndCompleteButton");
         sleep(20000);
-        //webDriverWrapper.switchTo().frame("injectedUl");
-        //log.info("Switch to iframe was correct");
         web.swithcToIframe();
         log.info("Swithicng to iFrame was correct");
         //web.waitForElementPresent("EmailField_PayPalForm");

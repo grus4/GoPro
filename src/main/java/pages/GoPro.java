@@ -22,6 +22,8 @@ public class GoPro {
     public PlusPDP plusPDP;
     public GoProSignInPage goProSignInPage;
     public CreateNewAccountPage createNewAccountPage;
+    public GoProPlusCheckoutPage goProPlusCheckoutPage;
+    public GoProPLusConfirmationPage goProPlusConfirmationPage;
 
     public GoPro(WebDriverWrapper driverWrapper) {
         web = new WebElementsActions(driverWrapper);
@@ -38,6 +40,8 @@ public class GoPro {
         plusPDP = new PlusPDP(driverWrapper);
         goProSignInPage = new GoProSignInPage(driverWrapper);
         createNewAccountPage = new CreateNewAccountPage(driverWrapper);
+        goProPlusCheckoutPage = new GoProPlusCheckoutPage(driverWrapper);
+        goProPlusConfirmationPage = new GoProPLusConfirmationPage(driverWrapper);
     }
 
 }

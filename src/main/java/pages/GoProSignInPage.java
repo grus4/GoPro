@@ -14,5 +14,7 @@ public class GoProSignInPage extends Page {
 
     public void switchToCreateNewAccountPage() {
         web.clickLink("SignUpForFreeLink");
+        web.waitForElementPresent("EmailFieldCreateAccountForm");
+        web.waitForElementToBeClickable("EmailFieldCreateAccountForm");
     }
 }

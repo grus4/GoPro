@@ -17,6 +17,7 @@ public class PlusPDP extends Page{
         web.waitForElementPresent("SignInButton");
         web.waitForElementToBeClickable("SignInButton");
         checkCorrectSwitchingToGoProLoginPage();
+        sleep(5000);
     }
 
     public void checkCorrectSwitchingToGoProLoginPage(){
