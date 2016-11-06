@@ -59,6 +59,7 @@ public class OnePageCheckout extends Page{
 
     public void clickTheNextStepButtonInShipping() {
         web.clickButton("NextStepButtonInShipping");
+        sleep(3000);
     }
 
     public void switchToPaymentSection() {
@@ -199,7 +200,7 @@ public class OnePageCheckout extends Page{
         } else {
             log.error("Last Name Error under the empty field is displayed INCORRECTLY" + "\n"
             + "is LastNameErrorMessage present - " + web.isElementPresent("LastNameErrorMessage")
-            + "\n" + "LastNameErrorMessage present - " + web.getElementText("LastNameErrorMessage"));
+            + "\n" + "LastNameErrorMessage - " + web.getElementText("LastNameErrorMessage"));
             Assert.fail("Last Name Error under the empty field is displayed INCORRECTLY" + "\n"
                     + "is LastNameErrorMessage present - " + web.isElementPresent("LastNameErrorMessage")
                     + "\n" + "LastNameErrorMessage present - " + web.getElementText("LastNameErrorMessage"));
@@ -207,4 +208,83 @@ public class OnePageCheckout extends Page{
 
     }
 
+    public void checkValidationEmptyAddress_1Field(){
+        if(web.isElementPresent("Address1ErrorMessage")
+                && web.getElementText("Address1ErrorMessage").equals("Please enter Address information")){
+            log.info("Address_1 Error Message under the empty field is displayed correctly");
+        } else {
+            log.error("Address_1 Error Message under the empty field is displayed INCORRECTLY" + "\n"
+            + "is Address_1 Error Message present - " + web.isElementPresent("Address1ErrorMessage")
+            + "\n" + "Address_1 Error Message - " + web.getElementText("Address1ErrorMessage"));
+            Assert.fail("Address_1 Error Message under the empty field is displayed INCORRECTLY" + "\n"
+                    + "is Address_1 Error Message present - " + web.isElementPresent("Address1ErrorMessage")
+                    + "\n" + "Address_1 Error Message - " + web.getElementText("Address1ErrorMessage"));
+        }
+    }
+
+    public void checkValidationEmptyCityField(){
+        if(web.isElementPresent("CityErrorMessage")
+                && web.getElementText("CityErrorMessage").equals("Please enter a City")){
+            log.info("City Error Message under the empty field is displayed correctly");
+        } else {
+            log.error("City Error Message under the empty field is displayed INCORRECTLY" + "\n"
+            + "is City Error Message present - " + web.isElementPresent("CityErrorMessage")
+            + "\n" + "City Error Message - " + web.getElementText("CityErrorMessage"));
+            Assert.fail("City Error Message under the empty field is displayed INCORRECTLY" + "\n"
+                    + "is City Error Message present - " + web.isElementPresent("CityErrorMessage")
+                    + "\n" + "City Error Message - " + web.getElementText("CityErrorMessage"));
+        }
+    }
+
+    public void checkValidationEmptyStateDropDown(){
+        if(web.isElementPresent("StateDropDownErrorMessage")
+                && web.getElementText("StateDropDownErrorMessage").equals("Please select a State")){
+            log.info("State Drop-Down Error Message under the empty field is displayed correctly");
+        } else {
+            log.error("State Drop-Down Error Message under the empty field is displayed INCORRETLY" + "\n"
+            + "is State Drop-Down Error Message present - " + web.isElementPresent("StateDropDownErrorMessage")
+            + "\n" + "State Drop-Down Error Message - " + web.getElementText("StateDropDownErrorMessage"));
+            Assert.fail("State Drop-Down Error Message under the empty field is displayed INCORRETLY" + "\n"
+                    + "is State Drop-Down Error Message present - " + web.isElementPresent("StateDropDownErrorMessage")
+                    + "\n" + "State Drop-Down Error Message - " + web.getElementText("StateDropDownErrorMessage"));
+        }
+    }
+
+    public void checkValidationEmptyPostCodeField(){
+        if(web.isElementPresent("PostCodeErrorMessage")
+                && web.getElementText("PostCodeErrorMessage").equals("Please enter a Postal Code")){
+            log.info("Post Code Error Message under the empty field is displayed correctly");
+        } else {
+            log.error("Post Code Error Message under the empty field is displayed INCORRECTLY" + "\n"
+            + "is Post Code Error Message present - " + web.isElementPresent("PostCodeErrorMessage")
+            + "\n" + "Post Code Error Message - " + web.getElementText("PostCodeErrorMessage"));
+            Assert.fail("Post Code Error Message under the empty field is displayed INCORRECTLY" + "\n"
+                    + "is Post Code Error Message present - " + web.isElementPresent("PostCodeErrorMessage")
+                    + "\n" + "Post Code Error Message - " + web.getElementText("PostCodeErrorMessage"));
+        }
+    }
+
+    public void checkValidationEmptyPhoneField(){
+        if(web.isElementPresent("PhoneFieldErrorMessage")
+                && web.getElementText("PhoneFieldErrorMessage").equals("Please enter a Telephone Number")){
+            log.info("Phone Field Error Message under the empty field is displayed correctly");
+        } else {
+            log.error("Phone Field Error Message under the empty field is displayed INCORRETLY" + "\n"
+            + "is Phone Field Error Message present - " + web.isElementPresent("PhoneFieldErrorMessage")
+            + "\n" + "Phone Field Error Message - " + web.getElementText("PhoneFieldErrorMessage"));
+            Assert.fail("Phone Field Error Message under the empty field is displayed INCORRETLY" + "\n"
+                    + "is Phone Field Error Message present - " + web.isElementPresent("PhoneFieldErrorMessage")
+                    + "\n" + "Phone Field Error Message - " + web.getElementText("PhoneFieldErrorMessage"));
+        }
+    }
+
+    public void cheeckValidationForAllEmptyReuiredFields(){
+        checkValidationEmptyFirstNameField();
+        checkValidationEmptyLastNameField();
+        checkValidationEmptyAddress_1Field();
+        checkValidationEmptyCityField();
+        checkValidationEmptyStateDropDown();
+        checkValidationEmptyPostCodeField();
+        checkValidationEmptyPhoneField();
+    }
 }

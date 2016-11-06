@@ -203,8 +203,8 @@ public class GuestCheckoutTest_US extends Fixture {
         goPro.shoppingCartPage.switchToCheckoutLoginPage();
         goPro.checkoutLoginPage.fillEmailField(EMAIL);
         goPro.checkoutLoginPage.switchToCheckoutPageAsGuest();
-        goPro.onePageCheckout.leaveAllRequiredFieldsEmpty();
         goPro.onePageCheckout.clickTheNextStepButtonInShipping();
+        goPro.onePageCheckout.cheeckValidationForAllEmptyReuiredFields();
 
     }
 }
